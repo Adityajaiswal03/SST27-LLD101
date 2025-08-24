@@ -3,5 +3,8 @@ public class Frame {
     Frame(byte[] d)
     { 
         this.data=d; 
-    } 
+    }
+    public int getSize() {
+        return data.length;
+    }
 }
