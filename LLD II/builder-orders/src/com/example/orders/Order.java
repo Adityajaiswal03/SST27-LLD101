@@ -17,7 +17,7 @@ public class Order {
     private Order(Builder builder){
         this.id = builder.id;
         this.customerEmail = builder.customerEmail;
-        this.lines = builder.lines;
+        this.lines = Collections.unmodifiableList(new ArrayList<>(builder.lines));
         this.discountPercent = builder.discountPercent;
         this.expedited = builder.expedited;
         this.notes = builder.notes;
