@@ -3,9 +3,9 @@ package com.example.render;
 public class Glyph {
     // Smell: style stored per instance → not memory efficient
     private final char ch;
-    TextStyleFactory ts;
+    TextStyle ts;
 
-    public Glyph(char ch, TextStyleFactory ts) {
+    public Glyph(char ch, TextStyle ts) {
         this.ch = ch; 
         this.ts=ts;
     }

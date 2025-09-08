@@ -1,20 +1,10 @@
 package com.example.render;
+
+import java.util.HashMap;
+
 public class TextStyleFactory {
-    private final String font;
-    private final int size;
-    private final boolean bold;
-    TextStyleFactory(String font,int size,boolean bold){
-        this.font=font;
-        this.size=size;
-        this.bold=bold;
-    }
-    String getFont(){
-        return this.font;
-    }
-    int getSize(){
-        return this.size;
-    }
-    boolean isBold(){
-        return this.bold;
+    HashMap<Character,TextStyle>map=new HashMap<>();
+    public TextStyle getTextStyle(char key){
+        return map.get(key);
     }
 }
