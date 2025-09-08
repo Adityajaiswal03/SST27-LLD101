@@ -1,4 +1,4 @@
-package com.example.video;
+package src.com.example.video;
 
 /** Odd legacy API expecting a 'handle' string; returns a new handle string. */
 public class LegacySharpen {

@@ -1,4 +1,4 @@
-package com.example.video;
+package src.com.example.video;
 
 public class FilterEngine {
     public Frame[] grayscale(Frame[] frames){ return frames; } // pretend

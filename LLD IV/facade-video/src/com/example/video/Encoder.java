@@ -1,4 +1,4 @@
-package com.example.video;
+package src.com.example.video;
 import java.nio.file.Path;
 
 public class Encoder {

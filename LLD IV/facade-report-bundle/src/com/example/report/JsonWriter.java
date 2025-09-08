@@ -6,10 +6,17 @@ public class JsonWriter {
         try {
             Files.createDirectories(outDir);
             Path p = outDir.resolve(fileName + ".json");
+
+            String name = data.get("name") != null ? data.get("name").toString() : "";
+            String json = "{\"ok\":true,\"name\":\"" + name.replace("\"", "\\\"") + "\"}";
+
             try (BufferedWriter w = Files.newBufferedWriter(p)) {
-                w.write("{"ok":true,"name":"" + data.get("name") + ""}");
+                w.write(json);
             }
+
             return p;
-        } catch (IOException e) { throw new UncheckedIOException(e); }
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 }

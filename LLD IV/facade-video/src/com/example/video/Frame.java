@@ -1,4 +1,4 @@
-package com.example.video;
+package src.com.example.video;
 
 public class Frame {
     public final int w, h;

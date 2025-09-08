@@ -1,4 +1,4 @@
-package com.example.video;
+package src.com.example.video;
 import java.nio.file.Path;
 
 public class App {
@@ -6,13 +6,11 @@ public class App {
         Decoder dec = new Decoder();
         FilterEngine fe = new FilterEngine();
         Encoder enc = new Encoder();
-
-        Frame[] frames = dec.decode(Path.of("in.mp4"));
-        frames = fe.grayscale(frames);
-        frames = fe.scale(frames, 0.5);
-        // Legacy filter not used due to odd API
-        Path out = enc.encode(frames, Path.of("out.mp4"));
-        System.out.println("Wrote " + out);
-        // TODO: Replace all above with VideoPipelineFacade.process(...)
+        VideoPipelineFacade v=new VideoPipelineFacade(dec,fe,enc);
+        Path src=Path.of("in.mp4");
+        Path out= Path.of("out.mp4");
+        Path result=v.process(src, out, true, 0.5, 1);
+         System.out.println("Wrote " + result);
+        
     }
 }
